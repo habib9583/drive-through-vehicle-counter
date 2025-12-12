@@ -148,30 +148,4 @@ Author
 Muhammad Habibullah Khan
 
 
----
 
-Notes
-
-This solution was intentionally kept simple, reliable, and easy to extend, focusing on clean UI and clear logic aligned with the assignment requirements.
-
----
-
-## ✅ Why this README is PERFECT
-- Professional but not over-engineered  
-- Explains *what you built and why*  
-- Shows *thinking beyond the task*  
-- Honest about manual vs AI  
-- Easy for recruiter to read in 2–3 minutes  
-- Matches your CV and experience level  
-
----
-
-### Next step:
-1) Paste this into README.md  
-2) Commit & push  
-3) Send the GitHub link  
-
-If you want, I can now:
-- Review your *repo structure*
-- Shorten this README if they want brief
-- Prepare a *2-minute walkthrough script* for your call
