@@ -1,70 +1,177 @@
-# Getting Started with Create React App
+# Drive-through Vehicle Counter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This project is a small front-end application built as part of an assignment to demonstrate a simple vehicle counting solution for a food drive-through pickup counter.
 
-## Available Scripts
+The application displays a CCTV video feed on the left side and a vehicle counter dashboard on the right side. Each time a vehicle stops at the pickup counter, the operator can increment the count. The total number of served vehicles and a log of recent counts are displayed in real time.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Problem Statement
+- Display a CCTV video feed of a drive-through.
+- Count each vehicle that stops at the pickup counter to collect an order.
+- Show the total number of vehicles served during the session.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Solution Approach
+- A *two-column UI* was created using React:
+  - *Left column:* CCTV video playback.
+  - *Right column:* Vehicle counter, controls, and activity log.
+- Counting is *manual / semi-manual*, designed for real-world operator use.
+- The UI is structured so that it can later be integrated with an AI-based vehicle detection system.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
+- Two-column responsive layout.
+- CCTV video playback.
+- Vehicle count displayed prominently.
+- Count vehicles using:
+  - Button click, or
+  - *Spacebar shortcut*.
+- Counting is allowed *only when the video is playing*.
+- Log of recently counted vehicles with:
+  - Timestamp
+  - Video time
+  - Trigger source (button / keyboard)
+- Undo last count.
+- Reset session.
+- Export vehicle log as a CSV file.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to Run the Project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+- Node.js (LTS recommended)
+- npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd drive-through-vehicle-counter
 
-### `npm run eject`
+2. Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Place the CCTV video file in:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+public/drive-through.mp4
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Start the development server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm start
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+The application will open automatically in the browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Usage Instructions
 
-### Advanced Configuration
+1. Play the CCTV video.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+2. When a vehicle stops at the pickup counter, press:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Spacebar, or
 
-### `npm run build` fails to minify
+Click + Count Vehicle.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+3. The total count will increase and the event will appear in the log.
+
+
+4. Use Undo if a count was added by mistake.
+
+
+5. Use Reset to start a new counting session.
+
+
+6. Export the log using Export CSV if needed.
+
+
+
+
+---
+
+Design Notes
+
+A highlighted “Pickup Zone” is shown on the video to represent the service area.
+
+This zone is intended for future AI-based detection (computer vision).
+
+The current version focuses on UI, logic, and usability rather than automatic detection.
+
+
+
+---
+
+Future Enhancements
+
+Integrate computer vision (e.g., OpenCV / YOLO) to automatically detect vehicles in the pickup zone.
+
+Store session data in a backend (Node.js + database).
+
+Analytics such as vehicles per hour/day.
+
+Multi-session reporting and user authentication.
+
+
+
+---
+
+Tech Stack
+
+React
+
+JavaScript (ES6)
+
+HTML5 Video
+
+CSS (Flexbox)
+
+
+
+---
+
+Author
+
+Muhammad Habibullah Khan
+
+
+---
+
+Notes
+
+This solution was intentionally kept simple, reliable, and easy to extend, focusing on clean UI and clear logic aligned with the assignment requirements.
+
+---
+
+## ✅ Why this README is PERFECT
+- Professional but not over-engineered  
+- Explains *what you built and why*  
+- Shows *thinking beyond the task*  
+- Honest about manual vs AI  
+- Easy for recruiter to read in 2–3 minutes  
+- Matches your CV and experience level  
+
+---
+
+### Next step:
+1) Paste this into README.md  
+2) Commit & push  
+3) Send the GitHub link  
+
+If you want, I can now:
+- Review your *repo structure*
+- Shorten this README if they want brief
+- Prepare a *2-minute walkthrough script* for your call
